@@ -43,7 +43,7 @@ function playRound(playerSelection,computerSelection){
         return alert("human won");
     }
     else{
-        console.log("nothing");
+        return alert("nothing");
     }
 }
 
