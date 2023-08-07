@@ -48,11 +48,11 @@ function playRound(playerSelection,computerSelection){
 }
 
 function game(){
-    let times = prompt("how many rounds do you want to play?");
+    let times = document.getElementById("userInput").value;
     for(let i = 0;i<times;i++){
         let playerSelection = getPlayerChoice();
         let computerSelection =getComputerChoice();
         playRound(playerSelection,computerSelection);
     }
 }
-game()
+
