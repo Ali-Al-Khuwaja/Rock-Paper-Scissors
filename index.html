@@ -4,15 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rock paper scissors</title>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors but for cats !</h1>
-    <h3>artificial intelligence has won over humanity and it's now up to the cats to save the last human survivors</h3>
-    <br>
-    <h3>How many round do you want to play ?</h3>
-    <input type="number" id="userInput" placeholder="Enter here please ">
-    <button onclick="game()">Submit</button>
+    <div class="margins">
+        <h1>Rock Paper Scissors but for cats !</h1>
+        <h3>artificial intelligence has won over humanity and it's now up to the cats to save the last human survivors</h3>
+        <br>
+        <h3>How many round do you want to play ?</h3>
+        <input type="number" id="userInput" placeholder="Enter here please ">
+        <button id="rounds">Submit</button>
+        <div class="buttons">
+            <a href="#" id="rock" onclick="getUseInput()">
+                <img src="pictures/rock.png" alt="Rock" width="250px" height="auto">
+            </a>
+            <a href="#" id="paper" onclick="getUserInput()">
+                <img src="pictures/paper.png" alt="Paper" width="250px" height="auto">
+            </a>
+            <a href="#" id="scissors" onclick="getUserInput()">
+                <img src="pictures/scissors.png" alt="Scissors" width="250px" height="auto">
+            </a>            
+        </div>
+        <div class="buttonTitles">
+            <h2>Rock</h2>
+            <h2>Paper</h2>
+            <h2>Scissors</h2>
+        </div>
+    </div>
 </body>
-</html>
+</html> 
