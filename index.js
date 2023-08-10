@@ -3,24 +3,31 @@ let rock = "rock" ;
 let paper = "paper";
 let scissors = "scissors";
 let userChoice = "" ;
-// on click event listeners
+//let roundsON = false ;
 
-const rockButton = document.querySelector('#rock');
-rockButton.addEventListener('click' ,function (){
+const currentTitle = document.querySelector('#variableTitle');
+// on click event listeners
+function rockButton(){
     userChoice=rock;
     startGame();
-});
-const paperButton = document.querySelector('#paper');
-paperButton.addEventListener('click',function(){
+};
+function paperButton(){
     userChoice=paper;
     startGame();
-});
-const scissorsButton = document.querySelector('#scissors');
-scissorsButton.addEventListener('click',function(){
+};
+function scissorsButton(){
     userChoice=scissors;
     startGame();
-});
+};
 
+//logical function 
+function startGame(){
+    console.log(userChoice);
+    getComputerChoice();
+    // to me : it turns out calling getComputerChoice with out the causes errors() 
+    playRound(userChoice,getComputerChoice());
+
+}
 function getComputerChoice(){
     let computerChoice = Math.floor(Math.random() * 3);
     if(computerChoice === 0){
@@ -37,41 +44,42 @@ function getComputerChoice(){
 function playRound(userChoice,computerSelection){
 
     if(userChoice===computerSelection ){
-         alert("tie");
+         //alert("tie");
+         currentTitle.textContent = 'tie!'
     }
     else if (userChoice==="scissors" && computerSelection==="rock") {
-         alert("computer won");
+         //alert("computer won");
+         currentTitle.textContent = 'computer won over you :('
+
     }
     else if (userChoice==="scissors" && computerSelection==="paper") {
-         alert("human won");
+        //alert("human won");
+        currentTitle.textContent = 'cat won over computer :>'
+
     }
     else if (userChoice==="paper" && computerSelection==="rock"){
-         alert("human won");
+        //alert("human won");
+        currentTitle.textContent = 'cat won over computer :>'
+
     }
     else if (userChoice==="paper" && computerSelection==="scissors"){
-         alert("human won");
+        //alert("human won");
+        currentTitle.textContent = 'cat won over computer :>'
     }
     else if (userChoice==="rock" && computerSelection==="paper") {
-         alert("computer won");
+        //alert("computer won");
+        currentTitle.textContent = 'computer won over you :('
     }
     else if (userChoice==="rock" && computerSelection==="scissors"){
-         alert("human won");
+        //alert("human won");
+        currentTitle.textContent = 'cat won over computer :>'
     }
     else{
-         alert("nothing");
+        alert("you discoved a bug , haaay O_o ");
     }
 }
 
 /*
-function getPlayerChoice(){
-
-
-}
-    //let answer = prompt("rock? , paper? , scissors ?").toLocaleLowerCase();
-    //return answer ;
-
-
-
 function game(){
     let times = document.getElementById("userInput").value;
     for(let i = 0;i<times;i++){
@@ -80,13 +88,8 @@ function game(){
         playRound(playerSelection,computerSelection);
     }
 }
-*/
 function rounds(){
-    let numberOfRounds = document.getElementById("userInput").value;
+    let numberOfRounds = document.getElementById("userInputOfRounds").value;
     return numberOfRounds;
 }
-function startGame(){
-    getComputerChoice();
-    playRound(userChoice,getComputerChoice);
-
-}
+*/

@@ -12,17 +12,17 @@
         <h1>Rock Paper Scissors but for cats !</h1>
         <h3>artificial intelligence has won over humanity and it's now up to the cats to save the last human survivors</h3>
         <br>
-        <h3>How many round do you want to play ?</h3>
-        <input type="number" id="userInput" placeholder="Enter here please ">
-        <button id="rounds">Submit</button>
+        <h3 id="variableTitle">How many round do you want to play ?</h3>
+        <input type="number" id="userInputOfRounds" placeholder="Enter here please ">
+        <button id="userInputOfRounds">Submit</button>
         <div class="buttons">
-            <a href="#" id="rock" onclick="getUseInput()">
+            <a href="#" onclick="rockButton()" >
                 <img src="pictures/rock.png" alt="Rock" width="250px" height="auto">
             </a>
-            <a href="#" id="paper" onclick="getUserInput()">
+            <a href="#" onclick="paperButton()" >
                 <img src="pictures/paper.png" alt="Paper" width="250px" height="auto">
             </a>
-            <a href="#" id="scissors" onclick="getUserInput()">
+            <a href="#" onclick="scissorsButton()">
                 <img src="pictures/scissors.png" alt="Scissors" width="250px" height="auto">
             </a>            
         </div>
