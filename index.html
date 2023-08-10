@@ -12,25 +12,28 @@
         <h1>Rock Paper Scissors but for cats !</h1>
         <h3>artificial intelligence has won over humanity and it's now up to the cats to save the last human survivors</h3>
         <br>
-        <h3 id="variableTitle">How many round do you want to play ?</h3>
-        <input type="number" id="userInputOfRounds" placeholder="Enter here please ">
-        <button id="userInputOfRounds" onclick="startChecker()">Submit</button>
+        <h3 id="variableTitle">rock , paper , scissors you decide</h3>
         <div class="buttons">
-            <a href="#" onclick="rockButton()" >
-                <img src="pictures/rock.png" alt="Rock" width="250px" height="auto">
-            </a>
-            <a href="#" onclick="paperButton()" >
-                <img src="pictures/paper.png" alt="Paper" width="250px" height="auto">
-            </a>
-            <a href="#" onclick="scissorsButton()">
-                <img src="pictures/scissors.png" alt="Scissors" width="250px" height="auto">
-            </a>            
+            <div>
+                <a href="#" onclick="rockButton()" >
+                    <img src="pictures/rock.png" alt="Rock"  id="rock">
+                </a>
+                <h2>rock</h2>
+            </div>
+            <div>
+                <a href="#" onclick="paperButton()" >
+                    <img src="pictures/paper.png" alt="Paper"  id="paper">
+                </a>
+                <h2>Paper</h2>
+            </div>
+            <div>  
+                <a href="#" onclick="scissorsButton()">
+                    <img src="pictures/scissors.png" alt="Scissors"  id="scissors">
+                </a>     
+                <h2>Scissors</h2>
+            </div>       
         </div>
-        <div class="buttonTitles">
-            <h2>Rock</h2>
-            <h2>Paper</h2>
-            <h2>Scissors</h2>
-        </div>
+
     </div>
 </body>
 </html> 

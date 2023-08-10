@@ -3,46 +3,34 @@ let rock = "rock" ;
 let paper = "paper";
 let scissors = "scissors";
 let userChoice = "" ;
-let roundsOn = false ;
-let hasClicked = false ;
-
 const currentTitle = document.querySelector('#variableTitle');
+const rockImage = document.querySelector('#rock');
+const paperImage = document.querySelector('#paper');
+const scissorsImage = document.querySelector('#scissors');
 // on click event listeners
 function rockButton(){
-    
-    if(roundsOn===true){
-        hasClicked=true;
-        userChoice=rock;
-    }else{
-        currentTitle.textContent="please enter how many rounds you want to play , O_O"
-    }
-    
+    userChoice=rock;
+    startGame();
+    rockImage.classList.add('clicked');
+    setTimeout(animation,0.7  );
 };
 function paperButton(){
-    
-    if(roundsOn===true){
-        hasClicked=true;
-        userChoice=paper;  
-    }else{
-        currentTitle.textContent="please enter how many rounds you want to play , O_O"
-    }
+    userChoice=paper;
+    startGame();  
+    paperImage.classList.add('clicked');
+    setTimeout(animation,0.7  );
 };
 function scissorsButton(){
-    
-    if(roundsOn===true){
-        hasClicked=true;
-        userChoice=scissors;
-    }else{
-        currentTitle.textContent="please enter how many rounds you want to play , O_O"
-    }
+    userChoice=scissors;
+    startGame();
+    scissorsImage.classList.add('clicked');
+    setTimeout(animation,0.7  );
 };
-
 //logical function 
 function startGame(){
     getComputerChoice();
     // to me : it turns out calling getComputerChoice with out the causes errors() 
     playRound(userChoice,getComputerChoice());
-
 }
 function getComputerChoice(){
     let computerChoice = Math.floor(Math.random() * 3);
@@ -56,57 +44,35 @@ function getComputerChoice(){
         return scissors;
     }
 }
-
 function playRound(userChoice,computerSelection){
-
     if(userChoice===computerSelection ){
-         //alert("tie");
          currentTitle.textContent = 'tie!'
     }
     else if (userChoice==="scissors" && computerSelection==="rock") {
-         //alert("computer won");
          currentTitle.textContent = 'computer won over you :('
-
     }
     else if (userChoice==="scissors" && computerSelection==="paper") {
-        //alert("human won");
         currentTitle.textContent = 'cat won over computer :>'
-
     }
     else if (userChoice==="paper" && computerSelection==="rock"){
-        //alert("human won");
         currentTitle.textContent = 'cat won over computer :>'
-
     }
     else if (userChoice==="paper" && computerSelection==="scissors"){
-        //alert("human won");
         currentTitle.textContent = 'cat won over computer :>'
     }
     else if (userChoice==="rock" && computerSelection==="paper") {
-        //alert("computer won");
         currentTitle.textContent = 'computer won over you :('
     }
     else if (userChoice==="rock" && computerSelection==="scissors"){
-        //alert("human won");
         currentTitle.textContent = 'cat won over computer :>'
     }
     else{
         alert("you discoved a bug , haaay :( ");
     }
 }
-
-function startChecker(){
-    roundsOn = true;
-    let numberOfRounds = document.getElementById("userInputOfRounds").value;
-    for(let i = 0;i<numberOfRounds;i++){
-        currentTitle.textContent= 'rock , paper ,scissors , you decide';
-        while(hasClicked===false){
-            console.log("hi");
-        if(hasClicked===true){
-            startGame();
-            hasClicked=false;
-            break;
-            }
-        }
-    }
+// wow i can make timeout function !
+function animation(){
+    rockImage.classList.remove  ('clicked');
+    paperImage.classList.remove('clicked');
+    scissorsImage.classList.remove('clicked');
 }
