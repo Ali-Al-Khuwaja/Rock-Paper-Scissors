@@ -3,26 +3,42 @@ let rock = "rock" ;
 let paper = "paper";
 let scissors = "scissors";
 let userChoice = "" ;
-//let roundsON = false ;
+let roundsOn = false ;
+let hasClicked = false ;
 
 const currentTitle = document.querySelector('#variableTitle');
 // on click event listeners
 function rockButton(){
-    userChoice=rock;
-    startGame();
+    
+    if(roundsOn===true){
+        hasClicked=true;
+        userChoice=rock;
+    }else{
+        currentTitle.textContent="please enter how many rounds you want to play , O_O"
+    }
+    
 };
 function paperButton(){
-    userChoice=paper;
-    startGame();
+    
+    if(roundsOn===true){
+        hasClicked=true;
+        userChoice=paper;  
+    }else{
+        currentTitle.textContent="please enter how many rounds you want to play , O_O"
+    }
 };
 function scissorsButton(){
-    userChoice=scissors;
-    startGame();
+    
+    if(roundsOn===true){
+        hasClicked=true;
+        userChoice=scissors;
+    }else{
+        currentTitle.textContent="please enter how many rounds you want to play , O_O"
+    }
 };
 
 //logical function 
 function startGame(){
-    console.log(userChoice);
     getComputerChoice();
     // to me : it turns out calling getComputerChoice with out the causes errors() 
     playRound(userChoice,getComputerChoice());
@@ -75,21 +91,22 @@ function playRound(userChoice,computerSelection){
         currentTitle.textContent = 'cat won over computer :>'
     }
     else{
-        alert("you discoved a bug , haaay O_o ");
+        alert("you discoved a bug , haaay :( ");
     }
 }
 
-/*
-function game(){
-    let times = document.getElementById("userInput").value;
-    for(let i = 0;i<times;i++){
-        let playerSelection = getPlayerChoice();
-        let computerSelection =getComputerChoice();
-        playRound(playerSelection,computerSelection);
+function startChecker(){
+    roundsOn = true;
+    let numberOfRounds = document.getElementById("userInputOfRounds").value;
+    for(let i = 0;i<numberOfRounds;i++){
+        currentTitle.textContent= 'rock , paper ,scissors , you decide';
+        while(hasClicked===false){
+            console.log("hi");
+        if(hasClicked===true){
+            startGame();
+            hasClicked=false;
+            break;
+            }
+        }
     }
 }
-function rounds(){
-    let numberOfRounds = document.getElementById("userInputOfRounds").value;
-    return numberOfRounds;
-}
-*/
